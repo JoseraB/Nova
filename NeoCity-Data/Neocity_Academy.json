@@ -3,7 +3,7 @@
         "source": {
             "site": "NeoCity Academy",
             "url": "https://www.osceolaschools.net/neoc",
-            "scraped_at": "2025-04-30T19:32:45.077804"
+            "scraped_at": "2025-05-02T13:43:28.351162"
         },
         "content": {
             "type": "Mission & Vision Statement",
@@ -15,7 +15,7 @@
         "source": {
             "site": "NeoCity Academy",
             "url": "https://www.osceolaschools.net/neoc",
-            "scraped_at": "2025-04-30T19:32:45.291976"
+            "scraped_at": "2025-05-02T13:43:28.390436"
         },
         "content": {
             "type": "Mission & Vision Statement",
@@ -27,7 +27,7 @@
         "source": {
             "site": "NeoCity Academy",
             "url": "https://www.osceolaschools.net/neoc",
-            "scraped_at": "2025-04-30T19:32:45.967819"
+            "scraped_at": "2025-05-02T13:43:29.406049"
         },
         "content": [
             {
@@ -42,7 +42,7 @@
         "source": {
             "site": "NeoCity Academy",
             "url": "https://www.osceolaschools.net/neoc",
-            "scraped_at": "2025-04-30T19:32:49.533458"
+            "scraped_at": "2025-05-02T13:43:36.105979"
         },
         "content": {
             "type": "AI Pathway",
@@ -70,6 +70,34 @@
                     "description": "AP Computer Science Principles is an introductory college-level computing course that introduces students to the breadth of the field of computer science. Students learn to design and evaluate solutions and to apply computer science to solve problems through the development of algorithms and programs. They incorporate abstraction into programs and use data to discover new knowledge. Students also explain how computing innovations and computing systems\u2014including the internet\u2014work, explore their potential impacts, and contribute to a computing culture that is collaborative and ethical."
                 }
             ]
+        }
+    },
+    {
+        "source": {
+            "site": "NeoCity Academy",
+            "url": "https://www.osceolaschools.net/neoc",
+            "scraped_at": "2025-05-02T13:43:39.836944"
+        },
+        "content": {
+            "type": "Projects",
+            "title": "Project Highlight #1 - TucanSpeak",
+            "project_description": "\"TucanSpeak\" is an AI-driven language-learning web application developed to enhance\u00a0English proficiency among Spanish speakers through interactive games. The project integrates several mini games that target different aspects of language learning, such as vocabulary, translation, pronunciation, and comprehension. By leveraging AI models,\u00a0including those from OpenAI, the app personalizes the learning experience to suit individual user progress. The platform underwent rigorous testing to address security vulnerabilities, ensuring data protection through measures like session-based authentication, SSL encryption, email verification, password hashing and salting, and DDoS protection. Deployment was managed on AWS Lightsail, with continuous improvements facilitated through a GitHub development environment. The project has received national recognition, including a first-place award in the 2024 National TSA Software Development competition and AP with WE Service Recognition, highlighting the innovative approach and impact of the \"TucanSpeak\" platform.",
+            "students": "Julian Dominguez, Qianyu Huang, Max Castel, Shohruh Ismatulla",
+            "image": null
+        }
+    },
+    {
+        "source": {
+            "site": "NeoCity Academy",
+            "url": "https://www.osceolaschools.net/neoc",
+            "scraped_at": "2025-05-02T13:43:39.931310"
+        },
+        "content": {
+            "type": "Projects",
+            "title": "Project Highlight #2 - Using AI to Classify IvCurve Experiments",
+            "project_description": "This project focused on enhancing data filtering efficiency for superconducting experiments at imec USA by leveraging machine learning techniques. A graphical interface built with PyQt6 allowed for the labeling of over 2,000 experiments. A custom resampling and normalization algorithm was developed to prepare IV-curve (current vs. voltage) data for input into a neural network. The machine learning model, designed using TensorFlow, utilized a combination of convolutional, LSTM RNN, and fully connected layers, achieving a 96% test accuracy in distinguishing \u201cgood\u201d data from \u201cgarbage\u201d data. The system was integrated into the production workflow, leading to the classification of over 60,000 past experiments. This solution significantly improved research efficiency, halving the time needed to filter through experiment data.",
+            "students": "Julian Dominguez, imec USA",
+            "image": "https://www.osceolaschools.net/cms/lib/FL50000609/Centricity/Domain/6658/Good%20v%20Bad.png"
         }
     }
 ]
