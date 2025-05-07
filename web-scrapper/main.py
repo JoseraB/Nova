@@ -269,4 +269,4 @@ with sync_playwright() as p:
     with open(FILE_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
 
-    input("Press Enter to close...")
+    #input("Press Enter to close...") Don't need now since its a finished model
