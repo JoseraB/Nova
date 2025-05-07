@@ -1,15 +1,16 @@
-import NOVA from './nova.png';
-import Knights from './knights.png';
-import Send from './send.png';
-import Settings from './settings.png';
+import NOVA from './nova.png'
+import Knight from './knight.png'
+import Send from './send.png'
+import Settings from './settings.png'
+import Adminicon from './adminicon.png'
 
 
 
 export const assets = {
     NOVA,
-    Knights,
+    Knight,
     Send,
     Settings,
-
+    Adminicon,
 
 }
