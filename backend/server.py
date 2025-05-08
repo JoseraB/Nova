@@ -5,9 +5,23 @@ from pydantic import BaseModel
 from dotenv import load_dotenv
 import json
 import os
+import fitz
 
 with open("..\\NeoCity-Data\\Neocity_Academy.json", "r", encoding="utf-8") as file:
     neo_data = json.load(file)
+
+ai_course_cert = "..\\NeoCity-Data\\NeoCity_AI_Pathway_Courses_And_Certs.pdf"
+
+def extract_text_from_pdf(pdf_path):
+    text=""
+    try:
+        with fitz.open(pdf_path) as doc:
+            for page in doc:
+                text += page.get_text()
+        return text
+    except Exception as e:
+        print(f"Failed to read PDF({pdf_path}) : {e}")
+        return None
 
 def extract_data(data):
     school_info = {
@@ -27,7 +41,7 @@ def extract_data(data):
         elif "vision" in ctype:
             school_info["vision"] = content["text"]
         elif "school_profile_pdf" in ctype:
-            school_info["school_profile_pdf"] = content["pdf_url"]
+            school_info["school_profile_pdf"] = content["pdf_file_path"]
         elif "ai pathway" in ctype:
             school_info["ai_pathway"]["overview"] = content["pathway_description"]
             school_info["ai_pathway"]["classes"] = [
@@ -45,6 +59,8 @@ def extract_data(data):
     return school_info
 
 neocity_data = extract_data(neo_data)
+neocity_schoolProf_data = extract_text_from_pdf(neocity_data["school_profile_pdf"])
+neocity_aipath_cert_course_data = extract_text_from_pdf(ai_course_cert)
 
 load_dotenv()
 
@@ -89,10 +105,13 @@ async def ask_openai(request: MessageRequest):
         {neocity_data['vision']}
 
         School Profile PDF:
-        {neocity_data['school_profile_pdf']}
+        {neocity_schoolProf_data}
 
         Artificial Intelligence Pathway Overview:
         {neocity_data['ai_pathway']['overview']}
+
+        AI Pathway Courses and Certifications:
+        {neocity_aipath_cert_course_data}
 
         AI Pathway Classes:
         """
@@ -119,6 +138,7 @@ async def ask_openai(request: MessageRequest):
         - Your information does not include all aspects of Neocity Academy, so be aware that you may not have all the information needed to answer a question. When answering prompt make sure to specify that your information may not be accurate due to limited/outdated information.
         - With each message that you are not certain with specify your limitations, dont decieve users.
         - Take context from previous message provided to you when coming up with a response
+        - If within your data there is an overlap in information prioritize data which is labeled more recent if there is no date within the data drop down its priority
         """
     }
 
