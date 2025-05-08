@@ -54,7 +54,7 @@ const ChatbotHome = () => {
       if (!Array.isArray(messages)) {
         throw new Error("Invalid Messages");
       }
-      const response = await axios.post("http://localhost:4000/openai", {
+      const response = await axios.post("https://nova-vy9s.onrender.com/openai", {
         messages: [...messages, { role: "user", content: userMessage }],
       });
 

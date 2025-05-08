@@ -11,6 +11,7 @@ with open(r"NeoCity-Data/Neocity_Academy.json", "r", encoding="utf-8") as file:
     neo_data = json.load(file)
 
 ai_course_cert = r"NeoCity-Data/NeoCity_AI_Pathway_Courses_And_Certs.pdf"
+school_profile = r"NeoCity-Data/School_Profile_NEOC.pdf"
 
 def extract_text_from_pdf(pdf_path):
     text=""
@@ -59,7 +60,7 @@ def extract_data(data):
     return school_info
 
 neocity_data = extract_data(neo_data)
-neocity_schoolProf_data = extract_text_from_pdf(neocity_data["school_profile_pdf"])
+neocity_schoolProf_data = extract_text_from_pdf(school_profile)
 neocity_aipath_cert_course_data = extract_text_from_pdf(ai_course_cert)
 
 load_dotenv()
@@ -76,7 +77,7 @@ app.add_middleware(
         "*"
     ],
     allow_credentials=True,
-    allow_methods=["GET", "POST"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
