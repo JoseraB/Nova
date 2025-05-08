@@ -38,8 +38,8 @@ def extract_data(data):
             school_info["projects"].append({
                 "title": content["title"],
                 "description": content["project_description"],
-                "students": content.get("students"),
-                "image": content.get("image")
+                "students": content["students"],
+                "image": content["image"]
             })
         
     return school_info
@@ -100,7 +100,7 @@ async def ask_openai(request: MessageRequest):
         """
         Projects:
         """
-            + "\n".join([f"{proj['title']}:\n{proj['description']}" for proj in neocity_data['projects']]) +
+            + "\n".join([f"{proj['title']}:\n{proj['description']}:\n{proj['students']}:\n{proj['image']}" for proj in neocity_data['projects']]) +
         """
         Your responsibilities include:
         - Use no emojis.
@@ -112,6 +112,13 @@ async def ask_openai(request: MessageRequest):
         - Always remain friendly and professional.
         - Answer questions about information that is included within the data provided to you.
         - Please assist users only with these topics and keep responses concise, friendly, and accurate.
+        - Be aware that most of the information provided is outdated and may not reflect the current state of NeoCity Academy.
+        - If the user asks for information that is not included in the data provided to you, please say "I don't know" instead of making up an answer.
+        - Updated information will be provided in the future.
+        - Do not use the internet as a source of information. Only use the information provided to you in the data.
+        - Your information does not include all aspects of Neocity Academy, so be aware that you may not have all the information needed to answer a question. When answering prompt make sure to specify that your information may not be accurate due to limited/outdated information.
+        - With each message that you are not certain with specify your limitations, dont decieve users.
+        - Take context from previous message provided to you when coming up with a response
         """
     }
 
