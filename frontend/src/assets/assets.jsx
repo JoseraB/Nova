@@ -1,8 +1,8 @@
-import NOVA from './nova.png'
-import Knight from './knight.png'
-import Send from './send.png'
-import Settings from './settings.png'
-import Adminicon from './adminicon.png'
+import NOVA from './NOVA.png'
+import Knight from './Knight.png'
+import Send from './Send.png'
+import Settings from './Settings.png'
+import Adminicon from './Adminicon.png'
 
 
 
