@@ -7,10 +7,10 @@ import json
 import os
 import fitz
 
-with open("NeoCity-Data\Neocity_Academy.json", "r", encoding="utf-8") as file:
+with open("NeoCity-Data\\Neocity_Academy.json", "r", encoding="utf-8") as file:
     neo_data = json.load(file)
 
-ai_course_cert = "NeoCity-Data\NeoCity_AI_Pathway_Courses_And_Certs.pdf"
+ai_course_cert = "NeoCity-Data\\NeoCity_AI_Pathway_Courses_And_Certs.pdf"
 
 def extract_text_from_pdf(pdf_path):
     text=""
