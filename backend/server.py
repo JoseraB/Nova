@@ -12,6 +12,7 @@ with open(r"NeoCity-Data/Neocity_Academy.json", "r", encoding="utf-8") as file:
 
 ai_course_cert = r"NeoCity-Data/NeoCity_AI_Pathway_Courses_And_Certs.pdf"
 school_profile = r"NeoCity-Data/School_Profile_NEOC.pdf"
+staff_and_courses = r"NeoCity-Data/Neo_Teachers_and_Class_info.pdf"
 
 def extract_text_from_pdf(pdf_path):
     text=""
@@ -62,6 +63,7 @@ def extract_data(data):
 neocity_data = extract_data(neo_data)
 neocity_schoolProf_data = extract_text_from_pdf(school_profile)
 neocity_aipath_cert_course_data = extract_text_from_pdf(ai_course_cert)
+neocity_staff_and_courses_data = extract_text_from_pdf(staff_and_courses)
 
 load_dotenv()
 
@@ -113,6 +115,9 @@ async def ask_openai(request: MessageRequest):
 
         AI Pathway Courses and Certifications:
         {neocity_aipath_cert_course_data}
+
+        NeoCity Staff and Courses:
+        {neocity_staff_and_courses_data}
 
         AI Pathway Classes:
         """
