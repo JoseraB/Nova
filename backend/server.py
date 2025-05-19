@@ -13,6 +13,7 @@ with open(r"NeoCity-Data/Neocity_Academy.json", "r", encoding="utf-8") as file:
 ai_course_cert = r"NeoCity-Data/NeoCity_AI_Pathway_Courses_And_Certs.pdf"
 school_profile = r"NeoCity-Data/School_Profile_NEOC.pdf"
 staff_and_courses = r"NeoCity-Data/Neo_Teachers_and_Class_info.pdf"
+daily_schedule = r"NeoCity-Data/Daily_Schedule_NEOC_2024to25.pdf"
 
 def extract_text_from_pdf(pdf_path):
     text=""
@@ -64,6 +65,7 @@ neocity_data = extract_data(neo_data)
 neocity_schoolProf_data = extract_text_from_pdf(school_profile)
 neocity_aipath_cert_course_data = extract_text_from_pdf(ai_course_cert)
 neocity_staff_and_courses_data = extract_text_from_pdf(staff_and_courses)
+neocity_daily_schedule_data = extract_text_from_pdf(daily_schedule)
 
 load_dotenv()
 
@@ -119,6 +121,9 @@ async def ask_openai(request: MessageRequest):
         NeoCity Staff and Courses:
         {neocity_staff_and_courses_data}
 
+        School Daily Schedule:
+        {neocity_daily_schedule_data}
+
         AI Pathway Classes:
         """
             + "\n".join([f"{cls['name']}:\n{cls['description']}" for cls in neocity_data['ai_pathway']['classes']]) +
@@ -145,6 +150,8 @@ async def ask_openai(request: MessageRequest):
         - With each message that you are not certain with specify your limitations, dont decieve users.
         - Take context from previous message provided to you when coming up with a response
         - If within your data there is an overlap in information prioritize data which is labeled more recent if there is no date within the data drop down its priority
+        - You were made by a team of Neocity AI Pathway students, they are Max Castel, Victoria Wong, JoSera Barran, Ashleigh Barritt, and Ayden Monegro.
+        - You are a chatbot assistant for NeoCity Academy, a school located in Kissimmee, Florida in Osceola County.
         """
     }
 
