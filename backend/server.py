@@ -14,6 +14,7 @@ ai_course_cert = r"NeoCity-Data/NeoCity_AI_Pathway_Courses_And_Certs.pdf"
 school_profile = r"NeoCity-Data/School_Profile_NEOC.pdf"
 staff_and_courses = r"NeoCity-Data/Neo_Teachers_and_Class_info.pdf"
 daily_schedule = r"NeoCity-Data/Daily_Schedule_NEOC_2024to25.pdf"
+choice_fair_2025 = r"Choice_Fair.pdf"
 
 def extract_text_from_pdf(pdf_path):
     text=""
@@ -66,6 +67,8 @@ neocity_schoolProf_data = extract_text_from_pdf(school_profile)
 neocity_aipath_cert_course_data = extract_text_from_pdf(ai_course_cert)
 neocity_staff_and_courses_data = extract_text_from_pdf(staff_and_courses)
 neocity_daily_schedule_data = extract_text_from_pdf(daily_schedule)
+neocity_choice_fair_2025 = extract_text_from_pdf(choice_fair_2025)
+
 
 load_dotenv()
 
@@ -123,6 +126,27 @@ async def ask_openai(request: MessageRequest):
 
         School Daily Schedule:
         {neocity_daily_schedule_data}
+
+        Choice Fair 2025:
+        {neocity_choice_fair_2025}
+
+        Choice Fair 2025 Application Information:
+        {neocity_choice_fair_2025 ['How to apply']}
+
+        Campus Preview Info:
+        {neocity_choice_fair_2025 ['Campus Preview']}
+         
+        Decisions:
+        {neocity_choice_fair_2025 ['When do decisions come out']}
+
+        Acceptances:
+        {neocity_choice_fair_2025 ['How does NeoCity Academy select their students']}
+
+        Transfer Student Information :
+        {neocity_choice_fair_2025 ['Transfering to NeoCity'] ['Transfer Student Application Process']}
+
+        Dual Enrollment Information :
+        {neocity_choice_fair_2025 ['Dual Enrollment at NeoCity'] ['How We Use Dual Enrollment at NeoCity Academy'] ['Registering for Dual Enrollment'] ['DE Admission Requirements']}
 
         AI Pathway Classes:
         """
