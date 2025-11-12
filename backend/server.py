@@ -14,7 +14,7 @@ ai_course_cert = r"NeoCity-Data/NeoCity_AI_Pathway_Courses_And_Certs.pdf"
 school_profile = r"NeoCity-Data/School_Profile_NEOC.pdf"
 staff_and_courses = r"NeoCity-Data/Neo_Teachers_and_Class_info.pdf"
 daily_schedule = r"NeoCity-Data/Daily_Schedule_NEOC_2024to25.pdf"
-choice_fair_2025 = r"Choice_Fair.pdf"
+choice_fair_2025 = r"NeoCity-Data/Choice_Fair.pdf"
 
 def extract_text_from_pdf(pdf_path):
     text=""
