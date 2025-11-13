@@ -130,24 +130,6 @@ async def ask_openai(request: MessageRequest):
         Choice Fair 2025:
         {neocity_choice_fair_2025}
 
-        Choice Fair 2025 Application Information:
-        {neocity_choice_fair_2025 ['How to apply']}
-
-        Campus Preview Info:
-        {neocity_choice_fair_2025 ['Campus Preview']}
-         
-        Decisions:
-        {neocity_choice_fair_2025 ['When do decisions come out']}
-
-        Acceptances:
-        {neocity_choice_fair_2025 ['How does NeoCity Academy select their students']}
-
-        Transfer Student Information :
-        {neocity_choice_fair_2025 ['Transfering to NeoCity'] ['Transfer Student Application Process']}
-
-        Dual Enrollment Information :
-        {neocity_choice_fair_2025 ['Dual Enrollment at NeoCity'] ['How We Use Dual Enrollment at NeoCity Academy'] ['Registering for Dual Enrollment'] ['DE Admission Requirements']}
-
         AI Pathway Classes:
         """
             + "\n".join([f"{cls['name']}:\n{cls['description']}" for cls in neocity_data['ai_pathway']['classes']]) +
